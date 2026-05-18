@@ -1,4 +1,5 @@
 # Robotics Drawing Project - Group 21
+![Robot Architecture](WhatsApp Image 2025-12-23 at 2.03.57 AM(2).jpeg)
 
 ## Overview
 
@@ -248,6 +249,7 @@ After changes, upload the new firmware to Arduino.
 ## Team Contributors
 
 Group 21 - Robotics Project
+* **Mohamed Ashraf** - Mechatronics & Robotics Engineering, Cairo University
 
 ## Additional Resources
 
