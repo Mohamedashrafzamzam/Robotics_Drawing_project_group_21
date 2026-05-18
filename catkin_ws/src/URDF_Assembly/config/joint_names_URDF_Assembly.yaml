@@ -1,0 +1,19 @@
+joint_x_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: Joint_x
+  pid: {p: 50.0, i: 0.0, d: 15.0} # HIGH DAMPING/HOLD
+
+joint_z_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: Joint_z
+  pid: {p: 40.0, i: 0.0, d: 10.0} # HIGH DAMPING/HOLD
+
+joint_y_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: Joint_y
+  pid: {p: 15.0, i: 0.0, d: 1.0} 
+
+joint_r_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: Joint_r
+  pid: {p: 10.0, i: 0.0, d: 0.5}

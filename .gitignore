@@ -1,0 +1,21 @@
+# Python caching
+__pycache__/
+*.pyc
+
+# C++ / Build artifacts
+build/
+devel/
+logs/
+*.log
+*.o
+*.so
+
+# Heavy assets / local archives
+*.bag
+*.mp4
+*.zip
+*.tar.gz
+
+# IDEs
+.vscode/
+.idea/

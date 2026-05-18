@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot_urdf" default="urdf/URDF_Assembly.urdf"/>
+  <arg name="controllers_file" default="config/joint_names_URDF_Assembly.yaml"/>
+
+  <arg name="world_name" default="worlds/empty.world"/>
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="sim_time" default="true"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find URDF_Assembly)/$(arg robot_urdf)" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <node name="urdf_spawner"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        output="screen"
+        args="-urdf -model URDF_Assembly_Robot -param robot_description -x 0 -y 0 -z 0.1"/>
+
+  <node name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher"
+        output="screen"/>
+
+  <rosparam file="$(find URDF_Assembly)/$(arg controllers_file)"
+            command="load"/>
+
+  <node name="controller_spawner"
+      pkg="controller_manager"
+      type="spawner"
+      output="screen"
+      args="--timeout 120 
+            joint_state_controller
+            joint_x_position_controller
+            joint_z_position_controller
+            joint_y_position_controller
+            joint_r_position_controller"/>
+
+</launch>

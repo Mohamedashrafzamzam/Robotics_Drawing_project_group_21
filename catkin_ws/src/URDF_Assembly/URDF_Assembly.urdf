@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="URDF_Assembly">
+  <link
+   name="world">
+     </link>
+ 
+ <joint
+    name="world_fixed_joint"
+    type="fixed">
+  <parent
+    link="world"/>
+  <child
+    link="BaseLink"/>
+ <origin
+    xyz="0 0 0"
+    rpy="-1.57 0 0"/>
+ </joint>
+
+
+  <link
+    name="BaseLink">
+    <inertial>
+      <origin
+        xyz="1.3749E-06 0.012693 0.16596"
+        rpy="0 0 0" />
+      <mass
+        value="0.99605" />
+      <inertia
+        ixx="0.010265"
+        ixy="9.6743E-10"
+        ixz="-2.2221E-09"
+        iyy="0.010737"
+        iyz="2.5983E-06"
+        izz="0.00078449" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/BaseLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/BaseLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link_x">
+    <inertial>
+      <origin
+        xyz="-0.038574 -0.010676 0.082558"
+        rpy="0 0 0" />
+      <mass
+        value="0.3036" />
+      <inertia
+        ixx="0.00016435"
+        ixy="-1.4977E-05"
+        ixz="-1.3815E-07"
+        iyy="0.00060894"
+        iyz="-4.7621E-09"
+        izz="0.0004544" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 -0.03"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_x.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 -0.03"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_x.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_x"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BaseLink" />
+    <child
+      link="Link_x" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.27"
+      effort="100"
+      velocity="5" />
+  </joint>
+  <link
+    name="Link_r">
+    <inertial>
+      <origin
+        xyz="-0.038574 -0.010676 0.082558"
+        rpy="0 0 0" />
+      <mass
+        value="0.91441" />
+      <inertia
+        ixx="0.0047528"
+        ixy="-1.0223E-06"
+        ixz="-1.3009E-09"
+        iyy="0.0047415"
+        iyz="1.9945E-10"
+        izz="0.0010558" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_r"
+    type="continuous">
+    <origin
+      xyz="0 0 0.048"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Link_x" />
+    <child
+      link="Link_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="60"
+      velocity="5" />
+  </joint>
+  <link
+    name="Link_z">
+    <inertial>
+      <origin
+        xyz="-0.0043317 -0.043709 0.22645"
+        rpy="0 0 0" />
+      <mass
+        value="0.13863" />
+      <inertia
+        ixx="7.534E-05"
+        ixy="2.5522E-06"
+        ixz="2.4241E-07"
+        iyy="0.00010204"
+        iyz="2.6242E-06"
+        izz="5.4428E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 -0.18"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_z.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.73725 0.77647 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 -0.18"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_z.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_z"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.133"
+      rpy="0 0 0" />
+    <parent
+      link="Link_r" />
+    <child
+      link="Link_z" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.18"
+      effort="30"
+      velocity="10" />
+  </joint>
+  <link
+    name="Link_y">
+    <inertial>
+      <origin
+        xyz="-1.45716771982052E-16 -0.000859780014773825 0.107173415194205"
+        rpy="0 0 0" />
+      <mass
+        value="0.20264721491535" />
+      <inertia
+        ixx="0.00248246526430299"
+        ixy="-6.78632097641796E-21"
+        ixz="-3.46754112782229E-19"
+        iyy="0.00248443749376539"
+        iyz="5.53267974003125E-19"
+        izz="1.78011410697283E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_y.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../URDF_Assembly/meshes/Link_y.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_y"
+    type="prismatic">
+    <origin
+      xyz="-0.0023769 -0.022897 0.07"
+      rpy="1.5708 0 1.4763" />
+    <parent
+      link="Link_z" />
+    <child
+      link="Link_y" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.215"
+      upper="0"
+      effort="20"
+      velocity="15" />
+  </joint>
+</robot>
