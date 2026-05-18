@@ -1,6 +1,5 @@
 # Robotics Drawing Project - Group 21
-![Robot Architecture](WhatsApp Image 2025-12-23 at 2.03.57 AM(2).jpeg)
-
+![Robot Architecture](WhatsApp%20Image%202025-12-23%20at%202.03.57%20AM(2).jpeg)
 ## Overview
 
 This is a 4-axis robotic drawing system designed to autonomously draw on a 2D surface. The project combines hardware control via Arduino, computational geometry through inverse kinematics, and a ROS-based simulation environment. The robot uses a rail system (X-axis), arm movement (Y-axis), vertical lift (Z-axis), and rotational control (A-axis) to position a pen and draw patterns.
